@@ -1,6 +1,6 @@
 import numpy as np
 import random
-def AntColony(nants, evap, bpp, seed): #defined ant colony optimization as function 
+def AntColony(nants, evap, bpp, seed):
 #nants = # of ants, evap = evaporation rate, bpp =bin packing problem pick(1 or 2), seed = random number seed
 #nbins = # of bins, phmatrix = pheromone matrix, binweight = weight of bin list, itemweight = weight of item list
     random.seed(seed)
@@ -21,7 +21,7 @@ def AntColony(nants, evap, bpp, seed): #defined ant colony optimization as funct
         prob=[phmatrix[i]/div[i] for i in range(500)]
         for n in range(nants):
             for i in range(500):
-				#appends nbins random steps from S to E
+#appends nbins random steps from S to E
                 stoe[n].append(np.random.choice([j for j in range(nbins)], p=prob[i])+1)
 # fitness (best-worst path)
         fit = [0 for n in range(nants)] 
